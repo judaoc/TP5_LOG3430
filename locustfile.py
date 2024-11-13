@@ -29,4 +29,9 @@ class SimpleTasks(TaskSet):
 
 class SimpleUser(HttpUser):
     tasks = [SimpleTasks]
-    wait_time = between(1, 5)  # Simulate a wait time between requests
+    wait_time = between(1, 5)
+    fixed_count = 20
+class HeavyUser(HttpUser):
+    tasks = [SimpleTasks]
+    wait_time = between(5, 10)
+    fixed_count = 980
